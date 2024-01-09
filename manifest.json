@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "Seshat AI",
+  "description": "Seshat AI is a browser extension that helps you to find the right information at the right time.",
+  "version": "1.0",
+  "permissions": ["activeTab", "scripting"],
+  "host_permissions": ["<all_urls>"],
+  "background": {
+    "service_worker": "scripts/background.js"
+  },
+  "action": {
+    "default_popup": "popups/popup.html",
+    "default_icon": "images/hello_extensions.png"
+  },
+  "content_scripts": [
+    {
+      "js": ["scripts/content.js"],
+      "matches": ["<all_urls>"],
+      "run_at": "document_end"
+    }
+  ]
+}
